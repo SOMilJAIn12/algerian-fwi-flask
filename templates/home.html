@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FWI Prediction - Algerian Forest</title>
+    <style>
+        body{
+            margin:0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(120deg,#1e3c72,#2a5298);
+            color:white;
+        }
+
+        .container{
+            width: 80%;
+            margin: 40px auto;
+            background:white;
+            color:black;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 15px rgba(0,0,0,0.3);
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:30px;
+            color:#2a5298;
+        }
+
+        form{
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
+            gap:20px;
+        }
+
+        input{
+            padding:10px;
+            border-radius:5px;
+            border:1px solid #ccc;
+        }
+
+        label{
+            font-weight:bold;
+            font-size:14px;
+        }
+
+        .field{
+            display:flex;
+            flex-direction:column;
+        }
+
+        button{
+            grid-column: span 3;
+            padding:12px;
+            background:#2a5298;
+            color:white;
+            border:none;
+            border-radius:5px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#1e3c72;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Algerian Forest Fire Weather Index Prediction</h1>
+
+    <form action="/predictdata" method="post">
+
+        <div class="field">
+            <label>Temperature (°C)</label>
+            <input type="number" step="any" name="Temperature" required>
+        </div>
+
+        <div class="field">
+            <label>RH (%)</label>
+            <input type="number" step="any" name="RH" required>
+        </div>
+
+        <div class="field">
+            <label>Wind Speed (km/h)</label>
+            <input type="number" step="any" name="Ws" required>
+        </div>
+
+        <div class="field">
+            <label>Rain (mm)</label>
+            <input type="number" step="any" name="Rain" required>
+        </div>
+
+        <div class="field">
+            <label>FFMC</label>
+            <input type="number" step="any" name="FFMC" required>
+        </div>
+
+        <div class="field">
+            <label>DMC</label>
+            <input type="number" step="any" name="DMC" required>
+        </div>
+
+        <div class="field">
+            <label>DC</label>
+            <input type="number" step="any" name="DC" required>
+        </div>
+
+        <div class="field">
+            <label>ISI</label>
+            <input type="number" step="any" name="ISI" required>
+        </div>
+
+        <div class="field">
+            <label>Classes (0 or 1)</label>
+            <input type="number" step="1" name="Classes" required>
+        </div>
+
+        <button type="submit">Predict FWI</button>
+    </form>
+</div>
+
+</body>
+</html>
